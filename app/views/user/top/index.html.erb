@@ -1,0 +1,25 @@
+<% @title = '商品管理' %>
+<h1><%= @title %></h1>
+
+<div class="table-wrapper">
+  <table class="listing">
+    <tr>
+      <th>タイトル</th>
+      <th>本文</th>
+      <th>目標価格</th>
+      <th>現在の価格</th>
+      <th>開始日時</th>
+      <th>終了日時</th>
+    </tr>
+    <% @products.each do |m| %>
+      <tr>
+        <td><%= m.title %></td>
+        <td><%= m.body %></td>
+        <td><%= m.target_price %></td>
+        <td><%= m.current_price %></td>
+        <td><%= m.start_datetime %></td>
+        <td><%= m.end_datetime %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
