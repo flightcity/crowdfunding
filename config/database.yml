@@ -13,9 +13,10 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: 5
-  username: root
-  password: 'password'
-  socket: /var/lib/mysql/mysql.sock
+  username: <%= ENV['CROWDFUNDING_DATABASE_USERNAME'] %>
+  password: <%= ENV['CROWDFUNDING_DATABASE_PASSWORD'] %>
+  host: <%= ENV['CROWDFUNDING_DATABASE_HOST'] %>
+  socket: <%= ENV['CROWDFUNDING_DATABASE_SOCKET'] %>
 
 development:
   <<: *default
@@ -51,4 +52,3 @@ production:
   <<: *default
   database: crowdfunding_production
   username: crowdfunding
-  password: <%= ENV['CROWDFUNDING_DATABASE_PASSWORD'] %>
