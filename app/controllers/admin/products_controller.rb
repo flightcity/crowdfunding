@@ -19,7 +19,7 @@ class Admin::ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
-      flash.notice = '商品を新規登録しました。'
+      flash.notice = '職員アカウントを新規登録しました。'
       redirect_to :admin_products
     else
       render action: 'new'
@@ -30,7 +30,7 @@ class Admin::ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @product.assign_attributes(product_params)
     if @product.save
-      flash.notice = '商品を更新しました。'
+      flash.notice = '職員アカウントを更新しました。'
       redirect_to :admin_products
     else
       render action: 'edit'
@@ -40,7 +40,7 @@ class Admin::ProductsController < ApplicationController
   def destroy
     product = Product.find(params[:id])
     product.destroy!
-    flash.notice = '商品を削除しました。'
+    flash.notice = '職員アカウントを削除しました。'
     redirect_to :admin_products
   end
 
