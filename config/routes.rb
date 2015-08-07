@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   namespace :admin do
     root 'top#index'
-    resources :products
+    resources :products, shallow: true do
+      resources :product_images
+    end
   end
   
   namespace :user do
