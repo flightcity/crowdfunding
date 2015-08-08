@@ -14,9 +14,6 @@ gem 'rails-i18n', '~> 4.0.1'
 
 gem 'pry-rails'
 
-gem 'therubyracer'
-gem 'turbolinks'
-
 gem 'dragonfly', '~> 1.0.8'
 
 group :development, :test do
