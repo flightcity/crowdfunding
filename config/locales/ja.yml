@@ -1,0 +1,7 @@
+ja:
+  messages.product_created: "商品を新規登録しました。"
+  messages.product_edited: "商品を更新しました。"
+  messages.product_deleted: "商品を削除しました。"
+  messages.product_image_created: "商品画像を新規登録しました。"
+  messages.product_image_edited: "商品画像を更新しました。"
+  messages.product_image_deleted: "商品画像を削除しました。"
