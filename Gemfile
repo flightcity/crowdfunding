@@ -14,6 +14,8 @@ gem 'rails-i18n', '~> 4.0.1'
 
 gem 'pry-rails'
 
+gem 'dragonfly', '~> 1.0.8'
+
 group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'pry-doc'

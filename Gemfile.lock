@@ -36,6 +36,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    addressable (2.3.8)
     arel (6.0.2)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
@@ -62,6 +63,10 @@ GEM
     dotenv-rails (2.0.2)
       dotenv (= 2.0.2)
       railties (~> 4.0)
+    dragonfly (1.0.10)
+      addressable (~> 2.3)
+      multi_json (~> 1.0)
+      rack (>= 1.3.0)
     erubis (2.7.0)
     execjs (2.5.2)
     factory_girl (4.4.0)
@@ -241,6 +246,7 @@ DEPENDENCIES
   binding_of_caller
   coffee-rails (~> 4.1.0)
   dotenv-rails
+  dragonfly (~> 1.0.8)
   factory_girl_rails
   fuubar
   guard

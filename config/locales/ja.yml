@@ -1,0 +1,10 @@
+ja:
+  messages:
+    product:
+      created: "商品を新規登録しました。"
+      edited: "商品を更新しました。"
+      deleted: "商品を削除しました。"
+    product_image:
+      created: "商品画像を新規登録しました。"
+      edited: "商品画像を更新しました。"
+      deleted: "商品画像を削除しました。"
