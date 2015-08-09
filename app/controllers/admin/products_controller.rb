@@ -19,7 +19,7 @@ class Admin::ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
-      flash.notice = I18n.t('messages.product_created')
+      flash.notice = I18n.t('messages.product.created')
       redirect_to :admin_products
     else
       render action: 'new'
@@ -30,7 +30,7 @@ class Admin::ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @product.assign_attributes(product_params)
     if @product.save
-      flash.notice = I18n.t('messages.product_edited')
+      flash.notice = I18n.t('messages.product.edited')
       redirect_to :admin_products
     else
       render action: 'edit'
@@ -40,7 +40,7 @@ class Admin::ProductsController < ApplicationController
   def destroy
     product = Product.find(params[:id])
     product.destroy!
-    flash.notice = I18n.t('messages.product_deleted')
+    flash.notice = I18n.t('messages.product.deleted')
     redirect_to :admin_products
   end
 

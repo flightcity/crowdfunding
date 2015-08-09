@@ -20,7 +20,7 @@ class Admin::ProductImagesController < ApplicationController
   def create
     @product = Product.find(params[:product_id])
     if @product.product_images.create(product_image_params)
-      flash.notice = I18n.t('messages.product_image_created')
+      flash.notice = I18n.t('messages.product_image.created')
       redirect_to :admin_product_product_images
     else
       render action: 'new'
@@ -31,7 +31,7 @@ class Admin::ProductImagesController < ApplicationController
     @product_image = ProductImage.find(params[:id])
     @product_image.assign_attributes(product_image_params)
     if @product_image.save
-      flash.notice = I18n.t('messages.product_image_edited')
+      flash.notice = I18n.t('messages.product_image.edited')
       redirect_to admin_product_product_images_path(:product_id => @product_image.product_id)
     else
       render action: 'edit'
@@ -41,7 +41,7 @@ class Admin::ProductImagesController < ApplicationController
   def destroy
     product_image = ProductImage.find(params[:id])
     product_image.destroy!
-    flash.notice = I18n.t('messages.product_image_deleted')
+    flash.notice = I18n.t('messages.product_image.deleted')
     redirect_to admin_product_product_images_path(:product_id => product_image.product_id)
   end
 
