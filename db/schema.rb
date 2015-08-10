@@ -13,26 +13,29 @@
 
 ActiveRecord::Schema.define(version: 20150730082855) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "product_images", force: :cascade do |t|
-    t.integer  "product_id", limit: 4,                   null: false
-    t.string   "title",      limit: 255,                 null: false
-    t.string   "image_uid",  limit: 255
-    t.string   "image_name", limit: 255
-    t.boolean  "deleted",                default: false, null: false
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
+    t.integer  "product_id",                 null: false
+    t.string   "title",                      null: false
+    t.string   "image_uid"
+    t.string   "image_name"
+    t.boolean  "deleted",    default: false, null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "products", force: :cascade do |t|
-    t.string   "title",          limit: 255,                   null: false
-    t.text     "body",           limit: 65535
-    t.integer  "target_price",   limit: 4,                     null: false
-    t.integer  "current_price",  limit: 4,                     null: false
-    t.datetime "start_datetime",                               null: false
-    t.datetime "end_datetime",                                 null: false
-    t.boolean  "deleted",                      default: false, null: false
-    t.datetime "created_at",                                   null: false
-    t.datetime "updated_at",                                   null: false
+    t.string   "title",                          null: false
+    t.text     "body"
+    t.integer  "target_price",                   null: false
+    t.integer  "current_price",                  null: false
+    t.datetime "start_datetime",                 null: false
+    t.datetime "end_datetime",                   null: false
+    t.boolean  "deleted",        default: false, null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
   end
 
 end
