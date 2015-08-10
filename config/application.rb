@@ -24,9 +24,10 @@ module Crowdfunding
     config.generators do |g|
       g.helper false
       g.assets false
-      g.test_framework :rspec
-      g.controller_specs false
+      g.test_framework :rspec, fixture: true, fixture_replacement: :factory_girl
       g.view_specs false
+      g.routing_specs false
+      g.request_specs false
     end
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers

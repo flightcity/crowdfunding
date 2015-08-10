@@ -16,6 +16,8 @@ gem 'pry-rails'
 
 gem 'dragonfly', '~> 1.0.8'
 
+gem 'simplecov', :require => false, :group => :test
+
 group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'pry-doc'
