@@ -11,9 +11,9 @@ RSpec.describe Product, :type => :model do
     )
     expect(product).to be_valid
   end
-  describe '#title' do
-    it 'should be presence' do
-      should validate_presence_of(:title)
-    end
+  it 'is invalid without a title' do
+    product = Product.new(title: nil)
+    product.valid?
+    expect(product.errors[:title]).to include("を入力してください。")
   end
 end
