@@ -42,4 +42,5 @@ group :test do
   gem 'factory_girl_rails'
   gem 'fuubar'
   gem 'simplecov', require: false
+  gem 'shoulda-matchers'
 end
