@@ -8,3 +8,7 @@ ja:
       created: "商品画像を新規登録しました。"
       edited: "商品画像を更新しました。"
       deleted: "商品画像を削除しました。"
+    investment:
+      created: "投資を新規登録しました。"
+      edited: "投資を更新しました。"
+      deleted: "投資を削除しました。"

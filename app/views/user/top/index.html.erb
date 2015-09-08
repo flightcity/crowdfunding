@@ -1,9 +1,10 @@
-<% @title = '商品管理' %>
+<% @title = '商品一覧' %>
 <h1><%= @title %></h1>
 
 <div class="table-wrapper">
   <table class="listing">
     <tr>
+      <th>投資</th>
       <th>タイトル</th>
       <th>本文</th>
       <th>目標価格</th>
@@ -13,6 +14,7 @@
     </tr>
     <% @products.each do |m| %>
       <tr>
+        <td><%= link_to '投資', [:new, :user, m, :investment] %></td>
         <td><%= m.title %></td>
         <td><%= m.body %></td>
         <td><%= m.target_price %></td>
