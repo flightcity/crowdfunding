@@ -11,31 +11,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150908122847) do
+ActiveRecord::Schema.define(version: 20150914131111) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "investments", force: :cascade do |t|
-    t.integer  "product_id",                 null: false
-    t.integer  "user_id",                    null: false
     t.integer  "price"
     t.string   "comment"
-    t.datetime "create_at"
-    t.boolean  "deleted",    default: false, null: false
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "product_id"
+    t.integer  "user_id"
+    t.datetime "deleted_at"
   end
 
+  add_index "investments", ["product_id"], name: "index_investments_on_product_id", using: :btree
+  add_index "investments", ["user_id"], name: "index_investments_on_user_id", using: :btree
+
   create_table "product_images", force: :cascade do |t|
-    t.integer  "product_id",                 null: false
     t.string   "title",                      null: false
     t.string   "image_uid"
     t.string   "image_name"
     t.boolean  "deleted",    default: false, null: false
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
+    t.integer  "product_id"
   end
+
+  add_index "product_images", ["product_id"], name: "index_product_images_on_product_id", using: :btree
 
   create_table "products", force: :cascade do |t|
     t.string   "title",                          null: false
@@ -67,4 +71,7 @@ ActiveRecord::Schema.define(version: 20150908122847) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "investments", "products"
+  add_foreign_key "investments", "users"
+  add_foreign_key "product_images", "products"
 end
