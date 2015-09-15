@@ -1,4 +1,8 @@
 class InvestmentsController < ApplicationController
+  def index
+    @product = Product.find(params[:product_id])
+  end
+
   def new
     @product = Product.find(params[:product_id])
     @investment = Investment.new

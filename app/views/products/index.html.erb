@@ -4,7 +4,7 @@
 <div class="table-wrapper">
   <table class="listing">
     <tr>
-      <th>投資</th>
+      <th>アクション</th>
       <th>タイトル</th>
       <th>本文</th>
       <th>目標価格</th>
@@ -14,7 +14,10 @@
     </tr>
     <% @products.each do |m| %>
       <tr>
-        <td><%= link_to '投資', [:new, m, :investment] %></td>
+        <td>
+        	<%= link_to '投資登録', [:new, m, :investment] %>
+        	<%= link_to '投資一覧', [m, :investments] %>
+        </td>
         <td><%= m.title %></td>
         <td><%= m.body %></td>
         <td><%= m.target_price %></td>
