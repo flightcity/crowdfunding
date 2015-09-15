@@ -1,4 +1,4 @@
-class User::InvestmentsController < ApplicationController
+class InvestmentsController < ApplicationController
   def new
     @product = Product.find(params[:product_id])
     @investment = Investment.new

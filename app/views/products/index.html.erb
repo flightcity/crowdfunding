@@ -14,7 +14,7 @@
     </tr>
     <% @products.each do |m| %>
       <tr>
-        <td><%= link_to '投資', [:new, :user, m, :investment] %></td>
+        <td><%= link_to '投資', [:new, m, :investment] %></td>
         <td><%= m.title %></td>
         <td><%= m.body %></td>
         <td><%= m.target_price %></td>

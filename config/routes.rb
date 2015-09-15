@@ -9,9 +9,10 @@ Rails.application.routes.draw do
 
   namespace :user do
     root 'top#index'
-    resources :products, only: [ :show ] do
-      resources :investments, only: [ :create, :new ]
-    end
+  end
+  
+  resources :products, only: [ :index, :show ] do
+    resources :investments, only: [ :create, :new ]
   end
 # The priority is based upon order of creation: first created -> highest priority.
 # See how all your routes lay out with "rake routes".
