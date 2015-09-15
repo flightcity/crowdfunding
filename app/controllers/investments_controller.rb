@@ -8,8 +8,7 @@ class InvestmentsController < ApplicationController
   def create
     @product = Product.find(params[:product_id])
     if @product.investments.create(investment_params)
-      flash.notice = I18n.t('messages.investment.created')
-      redirect_to :user_root
+      redirect_to :products, notice: I18n.t('messages.investment.created')
     else
       render action: 'new'
     end
