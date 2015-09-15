@@ -7,7 +7,9 @@ class InvestmentsController < ApplicationController
 
   def create
     @product = Product.find(params[:product_id])
-    if @product.investments.create(investment_params)
+    @investment = @product.investments.build(investment_params)
+    @investment.user = current_user
+    if @investment.save
       redirect_to :products, notice: I18n.t('messages.investment.created')
     else
       render action: 'new'
