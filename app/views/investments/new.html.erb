@@ -1,0 +1,12 @@
+<% @title = '投資の新規登録' %>
+<h1><%= @title %></h1>
+
+<div id="generic-form">
+  <%= form_for [ @product, @investment ] do |f| %>
+    <%= render 'form', f: f %>
+    <div class="buttons">
+      <%= f.submit '登録' %>
+      <%= link_to 'キャンセル', :user_root %>
+    </div>
+  <% end %>
+</div>
