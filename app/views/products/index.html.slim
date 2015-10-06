@@ -1,0 +1,25 @@
+-@title = '商品一覧'
+h1 = @title
+
+div.table-wrapper
+  table.listing
+    tr
+      th アクション
+      th タイトル
+      th 本文
+      th 目標価格
+      th 現在の価格
+      th 開始日時
+      th 終了日時
+    - @products.each do |m|
+      tr
+        td
+          = link_to '投資登録', [:new, m, :investment]
+          span  | 
+          = link_to '投資一覧', [m, :investments]
+        td = m.title
+        td = m.body
+        td = m.target_price
+        td = m.current_price
+        td = m.start_datetime
+        td = m.end_datetime

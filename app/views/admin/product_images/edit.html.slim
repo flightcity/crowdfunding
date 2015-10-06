@@ -1,0 +1,9 @@
+-@title = '商品画像の編集'
+h1 = @title
+
+div.generic-form
+  = form_for [ :admin, @product, @product_image ] do |f|
+    == render 'form', f: f
+    div.buttons
+      = f.submit '更新'
+      = link_to 'キャンセル', admin_product_product_images_path(:product_id => @product_image.product_id)

@@ -18,6 +18,8 @@ gem 'dragonfly', '~> 1.0.8'
 
 gem 'devise'
 
+gem 'slim-rails'
+
 group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'pry-doc'

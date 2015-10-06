@@ -1,0 +1,9 @@
+div.notes
+  span.mark *
+  span 印の付いた項目は入力必須です。
+div
+  = f.label :price, '投資額', class: 'required'
+  = f.text_field :price, required: true
+div
+  = f.label :comment, 'コメント'
+  = f.text_area :comment
