@@ -1,8 +1,8 @@
--@title = '投資管理'
-h1 = @title
+-title = '投資管理'
+h1 = title
 
-div.table-wrapper
-  div.links
+.table-wrapper
+  .links
     = link_to '投資登録', :new_product_investment
   table.listing
     tr
@@ -14,5 +14,5 @@ div.table-wrapper
           td = m.user.email
           td = m.price
           td = m.comment
-  div.links
+  .links
     = link_to '投資登録', :new_product_investment

@@ -1,8 +1,8 @@
--@title = '商品画像管理'
-h1 = @title
+-title = '商品画像管理'
+h1 = title
 
-div.table-wrapper
-  div.links
+.table-wrapper
+  .links
     = link_to '新規登録', :new_admin_product_product_image
   table.listing
     tr
@@ -19,5 +19,5 @@ div.table-wrapper
             = link_to '編集', [ :edit, :admin, m ]
             span  | 
             = link_to '削除', [ :admin, m ], method: :delete, data: { confirm: '本当に削除しますか？' }
-  div.links
+  .links
     = link_to '新規登録', :new_admin_product_product_image
