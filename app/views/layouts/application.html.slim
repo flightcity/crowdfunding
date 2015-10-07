@@ -9,7 +9,8 @@ html
     header
       nav
         - if user_signed_in?
-          span Logged in as 
+          span
+            | Logged in as 
             = current_user.email
           = link_to 'プロフィール変更', edit_user_registration_path
           span  | 
