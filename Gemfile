@@ -37,6 +37,7 @@ group :development, :test do
   gem 'spring-commands-rspec'
   gem 'guard'
   gem 'guard-rspec'
+  gem 'factory_girl_rails'
 end
 
 group :development do
@@ -46,7 +47,6 @@ group :development do
 end
 
 group :test do
-  gem 'factory_girl_rails'
   gem 'fuubar'
   gem 'simplecov', require: false
   gem 'shoulda-matchers'
