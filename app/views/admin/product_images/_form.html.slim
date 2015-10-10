@@ -1,0 +1,9 @@
+.notes
+  span.mark *
+  span 印の付いた項目は入力必須です。
+div
+  = f.label :title, 'タイトル', class: 'required'
+  = f.text_field :title, required: true
+div
+  = f.label :image, '画像'
+  = f.file_field :image

@@ -1,0 +1,31 @@
+-title = '商品管理'
+h1 = title
+
+.table-wrapper
+  .links
+    = link_to '新規登録', :new_admin_product
+  table.listing
+    tr
+      th タイトル
+      th 本文
+      th 目標価格
+      th 現在の価格
+      th 開始日時
+      th 終了日時
+      th アクション
+      - @products.each do |m|
+        tr
+          td = m.title
+          td = m.body
+          td = m.target_price
+          td = m.current_price
+          td = m.start_datetime
+          td = m.end_datetime
+          td.actions
+            = link_to '画像一覧', [:admin, m, :product_images]
+            span  | 
+            = link_to '編集', [ :edit, :admin, m ]
+            span  | 
+            = link_to '削除', [ :admin, m ], method: :delete, data: { confirm: '本当に削除しますか？' }
+  .links
+    = link_to '新規登録', :new_admin_product

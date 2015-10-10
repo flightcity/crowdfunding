@@ -1,0 +1,25 @@
+DOCTYPE
+html
+  head
+    title Crowdfunding
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag :application
+    = csrf_meta_tags
+  body
+    header
+      nav
+        - if user_signed_in?
+          span
+            i.fa.fa-camera-retro
+            | Logged in as 
+            = current_user.email
+          = link_to 'プロフィール変更', edit_user_registration_path
+          span  | 
+          = link_to "ログアウト", destroy_user_session_path, method: :delete
+        - else
+          = link_to "サインイン", new_user_registration_path
+          span  | 
+          = link_to "ログイン", new_user_session_path
+    p.notice = notice
+    p.alert = alert
+    == yield

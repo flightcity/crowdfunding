@@ -1,0 +1,21 @@
+.notes
+  span.mark *
+  span 印の付いた項目は入力必須です。
+div
+  = f.label :title, 'タイトル', class: 'required'
+  = f.text_field :title, required: true
+div
+  = f.label :body, '本文'
+  = f.text_area :body
+div
+  = f.label :target_price, '目標価格', class: 'required'
+  = f.number_field :target_price, required: true
+div
+  = f.label :current_price, '現在の価格', class: 'required'
+  = f.number_field :current_price, required: true
+div
+  = f.label :start_datetime, '開始日時', class: 'required'
+  = f.datetime_select :start_datetime, required: true
+div
+  = f.label :end_datetime, '終了日時', class: 'required'
+  = f.datetime_select :end_datetime, required: true

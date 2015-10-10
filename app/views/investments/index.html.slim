@@ -1,0 +1,18 @@
+-title = '投資管理'
+h1 = title
+
+.table-wrapper
+  .links
+    = link_to '投資登録', :new_product_investment
+  table.listing
+    tr
+      th ユーザ
+      th 投資額
+      th コメント
+      - @product.investments.each do |m|
+        tr
+          td = m.user.email
+          td = m.price
+          td = m.comment
+  .links
+    = link_to '投資登録', :new_product_investment
