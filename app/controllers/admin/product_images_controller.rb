@@ -1,4 +1,5 @@
 class Admin::ProductImagesController < ApplicationController
+  layout 'admin'
   def index
     @product = Product.find(params[:product_id])
   end

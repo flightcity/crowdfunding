@@ -1,10 +1,12 @@
 -title = '商品管理'
 h1 = title
 
-.table-wrapper
-  .links
-    = link_to '新規登録', :new_admin_product
-  table.listing
+.links
+  = link_to :new_admin_product, class: 'btn btn-default' do
+    i.fa.fa-plus-circle.fa-before
+    | 新規登録
+table.table.table-bordered.table-striped
+  thead
     tr
       th タイトル
       th 本文
@@ -13,19 +15,26 @@ h1 = title
       th 開始日時
       th 終了日時
       th アクション
-      - @products.each do |m|
-        tr
-          td = m.title
-          td = m.body
-          td = m.target_price
-          td = m.current_price
-          td = m.start_datetime
-          td = m.end_datetime
-          td.actions
-            = link_to '画像一覧', [:admin, m, :product_images]
-            span  | 
-            = link_to '編集', [ :edit, :admin, m ]
-            span  | 
-            = link_to '削除', [ :admin, m ], method: :delete, data: { confirm: '本当に削除しますか？' }
-  .links
-    = link_to '新規登録', :new_admin_product
+  tbody
+    - @products.each do |m|
+      tr
+        td = m.title
+        td = m.body
+        td = m.target_price
+        td = m.current_price
+        td = m.start_datetime
+        td = m.end_datetime
+        td.actions
+          = link_to [:admin, m, :product_images], class: 'btn btn-default btn-xs' do
+            i.fa.fa-list-alt.fa-before
+            | 画像一覧
+          = link_to [ :edit, :admin, m ], class: 'btn btn-default btn-xs' do
+            i.fa.fa-edit.fa-before
+            | 編集
+          = link_to [ :admin, m ], class: 'btn btn-danger btn-xs', method: :delete, data: { confirm: '本当に削除しますか？' } do
+            i.fa.fa-trash.fa-before
+            | 削除
+.links
+  = link_to :new_admin_product, class: 'btn btn-default' do
+    i.fa.fa-plus-circle.fa-before
+    | 新規登録
