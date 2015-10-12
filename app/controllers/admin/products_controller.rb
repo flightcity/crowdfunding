@@ -5,7 +5,7 @@ class Admin::ProductsController < ApplicationController
 
   def show
     product = Product.find(params[:id])
-    redirect_to [ :edit, :admin, product ]
+    redirect_to edit_admin_product_url(params[:id])
   end
 
   def new
