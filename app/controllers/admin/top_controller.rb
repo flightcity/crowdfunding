@@ -1,5 +1,4 @@
-class Admin::TopController < ApplicationController
-  layout 'admin'
+class Admin::TopController < AdminController
   def index
     render action: 'index'
   end
