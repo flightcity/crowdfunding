@@ -31,7 +31,9 @@ html
                   = link_to "サインイン", new_user_registration_path
                 li
                   = link_to "ログイン", new_user_session_path
-    p.notice = notice
-    p.alert = alert
     .container
+      - if notice.present?
+        .alert.alert-success= notice
+      - if alert.present?
+        .alert.alert-success= alert
       == yield
