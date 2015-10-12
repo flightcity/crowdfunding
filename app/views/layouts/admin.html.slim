@@ -19,9 +19,9 @@ html
             ul.nav.navbar-nav.navbar-right
               - if user_signed_in?
                 li
-                  span
-                    |Logged in as 
-                    = current_user.email
+                  p.navbar-text
+                    span> Logged in as
+                    span= current_user.email
                 li
                   = link_to 'プロフィール変更', edit_user_registration_path
                 li
