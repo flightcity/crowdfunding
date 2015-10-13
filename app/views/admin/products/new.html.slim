@@ -1,9 +1,10 @@
 -title = '商品の新規登録'
 h1 = title
 
-#generic-form
-  = form_for [ :admin, @product ] do |f|
-    == render 'form', f: f
-    .buttons
-      = f.submit '登録'
-      = link_to 'キャンセル', :admin_products
+= form_for [ :admin, @product ] do |f|
+  == render 'form', f: f
+  .buttons
+    = button_tag type: 'submit', class: 'btn btn-primary' do
+      i.fa.fa-plus-circle>
+      | 登録
+    = link_to 'キャンセル', :admin_products, class: 'btn btn-default'
