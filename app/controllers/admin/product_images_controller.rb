@@ -1,4 +1,4 @@
-class Admin::ProductImagesController < ApplicationController
+class Admin::ProductImagesController < AdminController
   def index
     @product = Product.find(params[:product_id])
   end

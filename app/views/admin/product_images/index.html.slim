@@ -1,23 +1,31 @@
 -title = '商品画像管理'
 h1 = title
 
-.table-wrapper
-  .links
-    = link_to '新規登録', :new_admin_product_product_image
-  table.listing
+.links
+  = link_to :new_admin_product_product_image, class: 'btn btn-default' do
+    i.fa.fa-plus-circle>
+    | 新規登録
+table.table.table-bordered.table-striped
+  thead
     tr
       th タイトル
       th 画像ファイル
       th 画像
       th アクション
-      - @product.product_images.each do |m|
-        tr
-          td = m.title
-          td = m.image_name
-          td = image_tag m.image.thumb('400x200#').url if m.image_stored?
-          td.actions
-            = link_to '編集', [ :edit, :admin, m ]
-            span  | 
-            = link_to '削除', [ :admin, m ], method: :delete, data: { confirm: '本当に削除しますか？' }
-  .links
-    = link_to '新規登録', :new_admin_product_product_image
+  tbody
+    - @product.product_images.each do |m|
+      tr
+        td = m.title
+        td = m.image_name
+        td = image_tag m.image.thumb('400x200#').url if m.image_stored?
+        td.actions
+          = link_to [ :edit, :admin, m ], class: 'btn btn-default btn-xs' do
+            i.fa.fa-edit>
+            | 編集
+          = link_to [ :admin, m ], class: 'btn btn-danger btn-xs', method: :delete, data: { confirm: '本当に削除しますか？' } do
+            i.fa.fa-trash>
+            | 削除
+.links
+  = link_to :new_admin_product_product_image, class: 'btn btn-default' do
+    i.fa.fa-plus-circle>
+    | 新規登録
